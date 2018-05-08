@@ -12,12 +12,68 @@
         <title>Chatty.Dev</title>
 
         <!-- Bootstrap  CSS -->
-        <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 
         <!-- Custom styles for this template -->
-        <link rel="stylesheet" href="myStyle/styles.css" type="text/css">
+        <link rel="stylesheet" href="myStyle/styles.css" type="text/css"/>
+        <link rel="stylesheet" href="myStyle/w3css.css" type="text/css"/>
+        <link rel="stylesheet" href="myStyle/w3-3.css" type="text/css"/>
+        <script src="myStyle/myjavascript.js" type="text/javascript"></script>
   </head>
     <body>
-        <?php include 'Edit-Meun/meun.php'; ?>
+        
+       <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:160px;">
+          <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"> Chatty Dev </a>
+            </div>
+        </div>
+    </nav> 
+            <div class="w3-margin">
+                <img src="img/default_male.png" alt="image profile" class="w3-circle w3-margin" width="70%" height="70%"/>
+            </div>
+     <nav class="w3-bar w3-bar-block w3-card">      
+         <a href="#" class="w3-bar-item w3-button w3-bar-block w3-hover-green nav"><i class="fa fa-home"></i>Home</a>
+         <a href="#" class="w3-bar-item w3-button w3-bar-block w3-hover-green nav"><i class="fa fa-home"></i>Solution</a>
+         <a href="#" class="w3-bar-item w3-button w3-bar-block w3-hover-green nav"><i class="fa fa-home"></i>Examples</a>
+  <button class="w3-button w3-block w3-left-align w3-bar-block w3-hover-green" onclick="myAccFunc()">
+  Profile <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="demoAcc" class="w3-hide w3-white w3-card">
+    <a href="#" class="w3-bar-item w3-button nav active">Edit Profile</a>
+    <a href="#" class="w3-bar-item w3-button">Upload Files</a>
+  </div>
+         <a href="#" class="w3-bar-item w3-button w3-bar-block w3-hover-green"><i class="fa fa-inbox"></i>Inbox</a>
+         <a href="#" class="w3-bar-item w3-button w3-bar-block w3-hover-green"><i class="fa fa-search"></i>Content</a>
+     </nav>
+        </div>
+        
+        <div style="margin-left:160px">
+            <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="Login.php">Hi ,User</a></li>
+                        <li class="active"><a href="">Log Out</a></li>
+                    </ul>
+                
+                </div>
+        </div>
+    </nav>
+        </div>
     </body>
 </html>

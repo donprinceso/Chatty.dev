@@ -1,8 +1,8 @@
 <?php
-require_once "database/db.php";
+    include 'database/db.php';
 
 	//DB Connection Variable
-	$con = mysqli_connect($host,$user,$pass,$db);
+	$con = mysqli_connect(dbserver,dbuser,dbpassword,dbname);
         
        
         

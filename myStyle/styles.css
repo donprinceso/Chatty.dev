@@ -91,6 +91,17 @@ footer{
     padding: 5px;
    
 }
+.brand{
+    background: #5e4485;
+    margin: 0px;
+    padding: 10px;    
+}
+.side-meun{
+    padding: 0px;
+}
+a{
+    display: block;
+}
 
 @media screen and (max-width:600px){
     .carousel-caption{

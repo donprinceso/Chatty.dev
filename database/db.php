@@ -1,6 +1,6 @@
 <?php
 /* Database connection settings */
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'accounts';
+define("dbserver","localhost");
+define("dbuser","root");
+define("dbpassword","");
+define("dbname","account");

@@ -7,10 +7,8 @@ require 'database/functions.php';
 $errors=array();
 
 //get the database connect
-$con=  mysqli_connect($host, $user, $pass, $db);
+$con = mysqli_connect(dbserver,dbuser,dbpassword,dbname);
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') 
-        {
              if (isset($_POST['login'])) { //user logging in
         $email = mysqli_real_escape_string($con,$_POST['email']);
         $password = mysqli_real_escape_string($con,$_POST['password']);
@@ -21,34 +19,26 @@ $con=  mysqli_connect($host, $user, $pass, $db);
   if (empty($password)) {
   	array_push($errors, "Password is required");
   }
-  
-    $query="SELECT * FROM register WHERE email='$email' AND password = '$password'";
-    $result= mysqli_query($con,$query);
-    
-    if ( mysqli_num_rows($result) > 0 ){
-        
-        while ($row = mysqli_fetch_assoc($result)){
-            
-            $email = $row['email'];
-            $pass = $row['password'];
-            
-            // check if user exists
-            
-            if ($_REQUEST['email'] == $row['email'] ){
-                
-                array_push($errors,"User already exists !!");
-                
-            }
-        }
-        
+   if(strlen($password_1) < 6){			
+	 array_push($errors,"Password should not be less than 6 characters");
+    }
+  if(count($errors)==0){
+    $sql="SELECT email,password_1 FROM user WHERE email = '$email' and password ='$password_1'";
+    $result= mysqli_query($con, $sql);
+    $count= mysqli_num_rows($result);
+   if($count==1){
+     // $user_check_mail= mysqli_insert_id($con);
+      $_SESSION['email']= getUserEmail($email);
+    header("location: welcome_page.php");
+   }    
     }
     
     else {
-      array_push($errors,"You have entered wrong password, try again!");
+      array_push($errors,"<b>Login Failed:</b>You have entered wrong email and password, try again!");
        
     }
 }
 
         
-                 }
+                 
      

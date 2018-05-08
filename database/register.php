@@ -8,14 +8,14 @@ require 'database/functions.php';
 $errors=array();
 
 //get the database connect
-$con=  mysqli_connect($host, $user, $pass, $db);
+$con = mysqli_connect(dbserver,dbuser,dbpassword,dbname);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['SignUp'])) { //user registration
     $surname = mysqli_real_escape_string($con,$_POST['surname']);
     $firstname = mysqli_real_escape_string($con,$_POST['firstname']);
     $email = mysqli_real_escape_string($con,$_POST['email']);
-    $password = mysqli_real_escape_string($con,$_POST['password']);
+    $password_1 = mysqli_real_escape_string($con,$_POST['password_1']);
+    $password_2 = mysqli_real_escape_string($con,$_POST['password_2']);
    // $hash = mysqli_real_escape_string( md5( rand(0,1000) ) );
     
     
@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(empty($email)){
         array_push($errors,"Email is required");
     }
-    if(empty($password)){
+    if($password_1 !== $password_2){
         array_push($errors,"Password is required");
     }
-    if(strlen($password) < 6){			
+    if(strlen($password_1) < 6){			
 	 array_push($errors,"Password should not be less than 6 characters");
     }
  // Check if user with that email already exists
@@ -45,8 +45,8 @@ if (mysqli_num_rows($mail_result) > 0 ){
 else { // Email doesn't already exist in a database, proceed...
 $password=  md5($password);
     // active is 0 by DEFAULT (no need to include it here)
-    $sql = "INSERT INTO register (surname,firstname,email,password) " 
-            . "VALUES ('$surname','$firstname','$email','$password')";
+    $sql = "INSERT INTO register (surname,firstname,email,password_1,password_2) " 
+            . "VALUES ('$surname','$firstname','$email','$password_1','$password_2')";
            $res= mysqli_query($con,$sql);
     // Add user to the database
     if ($res ){
@@ -86,5 +86,4 @@ $password=  md5($password);
    
  }
 }
-}
-?>
+
