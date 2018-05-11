@@ -1,13 +1,14 @@
 <?php
 
 
-
-require 'database/db.php';
+session_start();
+//require 'database/db.php';
 require 'database/functions.php';
 // initializing variables
 $errors=array();
 
 //get the database connect
+/* @var $con type */
 $con = mysqli_connect(dbserver,dbuser,dbpassword,dbname);
 
     if (isset($_POST['SignUp'])) { //user registration
@@ -36,17 +37,17 @@ $con = mysqli_connect(dbserver,dbuser,dbpassword,dbname);
 	 array_push($errors,"Password should not be less than 6 characters");
     }
  // Check if user with that email already exists
-    $mail_query ="SELECT * FROM register WHERE email='$email'";
+    $mail_query ="SELECT * FROM userdb WHERE email='$email'";
     $mail_result = mysqli_query($con,$mail_query);
 // We know user email exists if the rows returned are more than 0
 if (mysqli_num_rows($mail_result) > 0 ){
                  array_push($errors,"Email address already exists");
 		}
 else { // Email doesn't already exist in a database, proceed...
-$password=  md5($password);
+    $password_1=  md5($password_1);
     // active is 0 by DEFAULT (no need to include it here)
-    $sql = "INSERT INTO register (surname,firstname,email,password_1,password_2) " 
-            . "VALUES ('$surname','$firstname','$email','$password_1','$password_2')";
+    $sql = "INSERT INTO userdb (surname,firstname,email,password_1) " 
+            . "VALUES ('$surname','$firstname','$email','$password_1')";
            $res= mysqli_query($con,$sql);
     // Add user to the database
     if ($res ){
@@ -55,9 +56,9 @@ $password=  md5($password);
         $_SESSION['logged_in'] = true; // So we know the user has logged in
         
          $_SESSION['message'] =
-                "<h3 class='purple-text text-darken-4 center'> Hey,.'$surname'..'$firstname'.</h3>
+                "<h3 class='purple-text text-darken-4 center'> Hey,.$surname $firstname.</h3>
                    <h4> Your account was successfully created! </h4>
-                 Confirmation link has been sent to <strong>.'$email'.</strong>, please verify
+                 Confirmation link has been sent to <strong> $email </strong>, please verify
                  your account by clicking on the link in the message!";
          
         // Send registration confirmation link (verify.php)

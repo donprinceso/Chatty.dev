@@ -1,5 +1,4 @@
 <?php
-session_start(); 
    
 require 'database/register.php';
     
@@ -11,17 +10,20 @@ include 'Template.php';
     <?php  include 'Validation/errors.php';?>
     
     <div class="form-group">
-        <input type="text" name="surname" class="form-control" placeholder="Surname"/>
+        <input type="text" name="surname" class="form-control" placeholder="Surname" required/>
     </div> 
     <div class="form-group ">
-        <input type="text" name="firstname" class="form-control" placeholder="First name"/>
+        <input type="text" name="firstname" class="form-control" placeholder="First name" required/>
     </div> 
     <div class="form-group ">
-        <input type="email" class="form-control" id="email" name="email" placeholder="Email"/>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required/>
     </div> 
     <div class="form-group">
-        <input type="password" class="form-control" name="password" placeholder="Password"/>
-    </div>  
+        <input type="password" class="form-control" name="password_1" placeholder="Password" required/>
+    </div>
+     <div class="form-group">
+        <input type="password" class="form-control" name="password_2" placeholder="Confirm Password" required/>
+    </div> 
     <div class="form-group">
         <button type="submit" class="btn btn-default btn-block" name="SignUp">
                             Sign Up

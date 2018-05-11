@@ -1,6 +1,6 @@
 CREATE DATABASE accounts;
 
-CREATE TABLE `accounts`.`register` 
+CREATE TABLE `accounts`.`userdb` 
 (
     `id` INT NOT NULL AUTO_INCREMENT,
     `surname` VARCHAR(50) NOT NULL,

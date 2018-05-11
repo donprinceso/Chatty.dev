@@ -22,7 +22,7 @@
   </head>
     <body>
         
-       <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:160px;">
+       <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:15%;">
           <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -36,8 +36,17 @@
         </div>
     </nav> 
             <div class="w3-margin">
-                <img src="img/default_male.png" alt="image profile" class="w3-circle w3-margin" width="70%" height="70%"/>
+                <img src="img/default_male.png" alt="image profile" class="w3-circle w3-margin" width="80%" height="80%"/>
             </div>
+           <div class="w3-container">
+           <div class="w3-bar w3-light-grey w3-border w3-small">
+  <a href="#" class="w3-bar-item w3-button w3-green"><i class="fa fa-home"></i> Home</a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
+</div>
+       </div>
      <nav class="w3-bar w3-bar-block w3-card">      
          <a href="#" class="w3-bar-item w3-button w3-bar-block w3-hover-green nav"><i class="fa fa-home"></i>Home</a>
          <a href="#" class="w3-bar-item w3-button w3-bar-block w3-hover-green nav"><i class="fa fa-home"></i>Solution</a>
@@ -54,7 +63,7 @@
      </nav>
         </div>
         
-        <div style="margin-left:160px">
+        <div style="margin-left:15%">
             <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
