@@ -21,14 +21,13 @@ require_once 'database/functions.php';
                         <li><a href="#">contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <div class="w3-dropdown-hover">
-                        <a href="#" class="w3-hide-small w3-right w3-padding-large" title="My Account">
-    <img src="img/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
-  </a>                  <div class="w3-dropdown-content">
-     <li class="active"><a href="#">Welcome <?php if (isset($_SESSION['email'])){
-                        echo $_SESSION['email']; }?></a></li>
-                        <li><a href="logout.php">Logout</a></li>
-    </div>
+                        <div class="w3-dropdown-hover w3-transparent">
+                        <a href="#" class="w3-hide-small w3-right w3-padding" title="My Account">
+                        <img src="img/avatar2.png" class="w3-circle" style="height:43px;width:43px" alt="Avatar"></a> 
+                        <div class="w3-dropdown-content">
+                            <a href="#" class="w3-bar-item w3-bar-block" onclick="document.getElementById('id01').style.display='block'">Profile</a>
+                            <a href="logout.php" class="w3-bar-item w3-bar-block">Logout</a>
+                        </div>
                     <!--     -->
                     </ul>
                 </div>
