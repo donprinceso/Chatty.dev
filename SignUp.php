@@ -28,6 +28,6 @@ include 'Template.php';
         <button type="submit" class="btn btn-default btn-block" name="SignUp">
                             Sign Up
                         </button>
-        <p>Already A Member? <a href="Login.php">LogIn</a></p>
+        <p>Already A Member? <a href="Login.php" class="w3-btn-block w3-button btn-default btn">LogIn</a></p>
     </div> 
 </form>

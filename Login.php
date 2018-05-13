@@ -21,6 +21,6 @@ include 'Template.php';
     <label><input type="checkbox"> Remember me</label>
   </div>
     <button type="submit" class="btn btn-default" id="submit" name="login_btn">Submit</button>
-  <p>Not Yet A Member? <a href="SignUp.php">Sign Up</a></p>
+    <p>Not Yet A Member? <a href="SignUp.php" class="btn btn-default">Sign Up</a></p>
    
 </form>
