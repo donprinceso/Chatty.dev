@@ -4,7 +4,7 @@
 */
 require 'database/db.php';
 session_start();
-$con=  mysqli_connect($host, $user, $pass, $db);
+$con = mysqli_connect(dbserver,dbuser,dbpassword,dbname);
 // Make sure email and hash variables aren't empty
 if(isset($_GET['email']) && !empty($_GET['email']))
 {

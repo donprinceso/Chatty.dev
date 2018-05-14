@@ -10,7 +10,7 @@ include 'Template.php';
     <?php  include 'Validation/errors.php';?>
     
     <div class="form-group">
-        <input type="text" name="surname" class="form-control" placeholder="Surname" required/>
+        <input type="text" name="surname" class="form-control" placeholder="Surname" required autofocus/>
     </div> 
     <div class="form-group ">
         <input type="text" name="firstname" class="form-control" placeholder="First name" required/>

@@ -32,8 +32,7 @@ if (!$con){
      // $user_check_mail= mysqli_insert_id($con);
       $_SESSION['email']= getUserEmail($email);
       //set session variables
-        $_SESSION['full_name']= get_full_username($surname);
-        $_SESSION['surname']= checkSurname($surname);
+      
     header("location:welcome_page.php");
    }
     }
