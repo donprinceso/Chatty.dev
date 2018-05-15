@@ -27,7 +27,7 @@ if (!$con){
     if(count($errors)==0){
     $sql="SELECT email,password_1 FROM userdb WHERE email = '$email' and password ='$password_1'";
     $result= mysqli_query($con, $sql);
-   if(mysqli_num_rows($result)==0) 
+   if(mysqli_num_rows($result)==1) 
    {
      // $user_check_mail= mysqli_insert_id($con);
       $_SESSION['email']= getUserEmail($email);
